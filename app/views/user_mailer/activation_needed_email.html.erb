@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Välkommen till GymKungen.se, <%= @user.name %></h1>
+    <p>
+      Den här mailaddressen har regisrerats på GymKungen.se
+      Om det inte är du som gjort detta var god och ignorera detta mail.
+      <br />
+      <br />
+
+      För att aktivera ditt konto, klicka på följande länk: <%= @user.email %>.<br/>
+    </p>
+    <p>
+      För att logga in på sidan följ följande länk: <%= @url %>.
+    </p>
+    <p>Tack för att du har blivit medlen, ha en fortsatt bra dag!</p>
+  </body>
+</html>
