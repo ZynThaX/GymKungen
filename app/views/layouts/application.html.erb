@@ -7,8 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%= nav_bar :fixed => :top, :brand => "GymKungen", :responsive => true, :static => :top do %>
+	    <%= menu_group do %>
+	        <%= menu_item "Home", "#" %>
+	        <%= menu_divider %>
+	        <%= menu_item "News", "#" %>
+	        <%= menu_item "Profile", "#" %>
+	        <%= menu_item "Shop", "#" %>
+<!-- 	        <%= drop_down "Products" do %>
+	            <%= menu_item "Protein", "#" %>
+	            <%= menu_item "Aminosyror", "#" %>
+	            <%= drop_down_divider %>
+	            <%= menu_item "Kreatin", "#" %>
+	        <% end %> -->
+	        <%= menu_item "About Us", "#" %>
+	        <%= menu_item "Contact", "#" %>
+	    <% end %>
+
+	<% end %>
+
 
 <%= yield %>
 
 </body>
+
 </html>

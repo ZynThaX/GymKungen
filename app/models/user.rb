@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
   # attr_accessible :title, :body
 
-
+  has_many :albums
+  has_many :images, :through => :albums
 
   
 end

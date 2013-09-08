@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130905225313) do
+ActiveRecord::Schema.define(:version => 20130908214250) do
+
+  create_table "albums", :force => true do |t|
+    t.boolean  "is_profile_album", :default => false
+    t.integer  "user_id",                             :null => false
+    t.string   "title"
+    t.text     "info"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "image_url"
+    t.string   "title"
+    t.integer  "album_id",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                           :null => false
@@ -22,6 +39,12 @@ ActiveRecord::Schema.define(:version => 20130905225313) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
+    t.string   "name"
+    t.string   "profile_picture"
+    t.integer  "training_category"
+    t.integer  "body_type"
+    t.text     "other_info"
+    t.integer  "gender"
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token"
